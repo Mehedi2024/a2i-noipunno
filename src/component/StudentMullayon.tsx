@@ -1,22 +1,37 @@
 import React from "react";
 import TeacherImg from "../assets/images/teacher.png";
-import { FiStar } from "react-icons/fi";
+import { FiStar, FiTriangle } from "react-icons/fi";
 import { useState, useEffect } from "react";
 
 import styles from "./Home.style.module.css";
-import { BiSidebar } from "react-icons/bi";
+import {
+  BiCircle,
+  BiFilterAlt,
+  BiSidebar,
+  BiSquareRounded,
+} from "react-icons/bi";
 import { BsCloudSun, BsMoon } from "react-icons/bs";
 import { SlBookOpen } from "react-icons/sl";
-import { HiOutlineSun, HiOutlineDotsVertical } from "react-icons/hi";
+import {
+  HiOutlineSun,
+  HiOutlineDotsVertical,
+  HiOutlineDotsHorizontal,
+} from "react-icons/hi";
 import ProfileCard from "./ProfileCard";
 import { Pi_save, teacher_dashboard, teacher_own_subject } from "../Request";
 import { useParams } from "react-router-dom";
+import {
+  MdArrowBackIosNew,
+  MdArrowForwardIos,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
+import { GoPerson } from "react-icons/go";
 
 const own_SUbjects__: any = localStorage.getItem("own_subjet") || "";
 const own_SUbjects = own_SUbjects__ ? JSON.parse(own_SUbjects__) : "";
 
 export default function StudentMullayon() {
-  const { assessment_uid }:any = useParams();
+  const { assessment_uid }: any = useParams();
   const [Student, setStudent] = useState<any>([]);
   const [teacher, setteacher] = useState<any>({});
   const [individual_student, setindividual_student] = useState<any>({});
@@ -67,20 +82,29 @@ export default function StudentMullayon() {
     pi_uid: any,
     weight_uid: any
   ) => {
-    const datas = new FormData()
-    datas.append('assessment_uid', assessment_uid)
-    datas.append('competence_uid', competence_uid)
-    datas.append('pi_uid', pi_uid)
-    datas.append('weight_uid', weight_uid)
-    datas.append('student_uid', individual_student.uid)
-    datas.append('teacher_caid', teacher.caid)
-    datas.append('submit_status', "2")
-    datas.append('is_approved', "1")
 
-    let { data } = await Pi_save(
-      datas
-    );
-    console.log(`data`, data);
+    try {
+
+      let { data } = await Pi_save(
+        assessment_uid,
+        competence_uid,
+        pi_uid,
+        weight_uid,
+        individual_student.uid,
+        teacher.caid,
+        2,
+        1
+      );
+  
+      if (data.status) {
+        alert("Success")
+      }
+      
+    } catch (error) {
+      alert("SOmething went wrong")
+    }
+
+    
   };
 
   console.log(`Student`, Student);
@@ -99,46 +123,43 @@ export default function StudentMullayon() {
                   <div></div>
                   <div className="d-flex">
                     <h5>
-                      <BiSidebar /> বিষয়সমূহ
+                      <BiSidebar /> শিক্ষার্থী
                     </h5>
                   </div>
                 </div>
                 <div className="row">
                   {Student.map((teacher: any, k: any) => (
-                    <>
-                      <div
-                        className="col-sm-6 col-md-4 my-2"
-                        key={k}
-                        onClick={() => showCompitance(teacher)}
-                      >
-                        <div className="card shadow-lg border-0">
-                          <div className="d-flex justify-content-between gap-3 border-bottom">
-                            <div className="d-flex gap-3 align-items-center p-2">
-                              <div>
-                                <img
-                                  src={TeacherImg}
-                                  className="img-fluid"
-                                  style={{ height: "50px" }}
-                                />
-                              </div>
-                              <div className="mt-2">
-                                <h5 className={styles.teacherName}>
-                                  {teacher.student_name_bn}
-                                </h5>
-                                <h6 className={styles.deg}>
-                                  {teacher.position}
-                                </h6>
-                              </div>
-                            </div>
-                            <div className="p-1">
-                              <HiOutlineDotsVertical
-                                className={`fs-4 ${styles.OutlineDotsVertical}`}
+                    <div
+                      className="col-sm-6 col-md-4 my-2"
+                      key={k}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => showCompitance(teacher)}
+                    >
+                      <div className="card shadow-lg border-0">
+                        <div className="d-flex justify-content-between gap-3 border-bottom">
+                          <div className="d-flex gap-3 align-items-center p-2">
+                            <div>
+                              <img
+                                src={TeacherImg}
+                                className="img-fluid"
+                                style={{ height: "50px" }}
                               />
                             </div>
+                            <div className="mt-2">
+                              <h5 className={styles.teacherName}>
+                                {teacher.student_name_bn}
+                              </h5>
+                              <h6 className={styles.deg}>{teacher.position}</h6>
+                            </div>
+                          </div>
+                          <div className="p-1">
+                            <HiOutlineDotsVertical
+                              className={`fs-4 ${styles.OutlineDotsVertical}`}
+                            />
                           </div>
                         </div>
                       </div>
-                    </>
+                    </div>
                   ))}
 
                   {compitance.length > 0 && (
@@ -206,39 +227,152 @@ export default function StudentMullayon() {
                                   <div className="card card-body">
                                     <div>
                                       {d.pis.map((pis_d: any, kkey: any) => (
-                                        <div key={kkey}>
-                                          {pis_d.name_bn}
-                                          <div className="mt-5">
-                                            {pis_d.pi_attribute.map(
-                                              (pi_attr: any, kedy: any) => (
-                                                <ol key={kedy}>
-                                                  {pi_attr.title_bn}|
-                                                  <button
-                                                    onClick={() =>
-                                                      save_PI_evalution(
-                                                        d.uid,
-                                                        pi_attr.uid,
-                                                        pi_attr.weight_uid
-                                                      )
-                                                    }
-                                                    className={`btn btn-sm ${
-                                                      pi_attr.weight.name ==
-                                                      "Square"
-                                                        ? "btn-info"
-                                                        : pi_attr.weight.name ==
-                                                          "Circle"
-                                                        ? "btn-primary"
-                                                        : "btn-warning"
-                                                    } `}
-                                                    type="button"
-                                                  >
-                                                    {pi_attr.weight.name}
-                                                  </button>
-                                                </ol>
-                                              )
-                                            )}
+                                        <>
+                                          <div className="py-3" key={kkey}>
+                                            <div>
+                                              <h6>{pis_d.name_bn}</h6>
+                                            </div>
+                                            <div className="card shadow-lg p-3 mt-3">
+                                              <div className="table-responsive">
+                                                <table className="table table-sm">
+                                                  <thead>
+                                                    <tr>
+                                                      <th
+                                                        scope="col"
+                                                        style={{ width: "5%" }}
+                                                      >
+                                                        শিক্ষার্থীর{" "}
+                                                        <BiFilterAlt className="fs-5 ms-4" />
+                                                      </th>
+                                                      <th
+                                                        scope="col"
+                                                        style={{ width: "30%" }}
+                                                      ></th>
+                                                      <th
+                                                        scope="col"
+                                                        style={{ width: "30%" }}
+                                                      >
+                                                        <BiFilterAlt className="fs-5" />
+                                                      </th>
+                                                      <th
+                                                        scope="col"
+                                                        style={{ width: "30%" }}
+                                                      ></th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td
+                                                        style={{ width: "5%" }}
+                                                      >
+                                                        <GoPerson className="fs-6" />{" "}
+                                                        {
+                                                          individual_student.student_name_bn
+                                                        }{" "}
+                                                        <br />
+                                                        {individual_student.uid}
+                                                      </td>
+
+                                                      {pis_d.pi_attribute.map(
+                                                        (
+                                                          pi_attr: any,
+                                                          kedy: any
+                                                        ) => (
+                                                          <td
+                                                            style={{
+                                                              width: "30%",
+                                                            }}
+                                                            key={kedy}
+                                                          >
+                                                            <div className="d-flex gap-2">
+                                                              {" "}
+                                                              <div
+                                                                className=""
+                                                                style={{
+                                                                  border:
+                                                                    "1px solid #eee",
+                                                                  padding:
+                                                                    "5px 6px",
+                                                                  borderRadius:
+                                                                    "3px",
+                                                                  maxHeight:
+                                                                    "40px",
+                                                                }}
+                                                                onClick={() =>
+                                                                  save_PI_evalution(
+                                                                    d.uid,
+                                                                    pi_attr.uid,
+                                                                    pi_attr.weight_uid
+                                                                  )
+                                                                }
+                                                              >
+                                                                {" "}
+                                                                {pi_attr.weight
+                                                                  .name ==
+                                                                  "Square" && (
+                                                                  <BiSquareRounded className="fs-5 mt-1" />
+                                                                )}
+                                                                {pi_attr.weight
+                                                                  .name ==
+                                                                  "Circle" && (
+                                                                  <BiCircle className="fs-5 mt-1" />
+                                                                )}
+                                                                {pi_attr.weight
+                                                                  .name ==
+                                                                  "Triangle" && (
+                                                                  <FiTriangle className="fs-5 mt-1" />
+                                                                )}
+                                                              </div>
+                                                              <div>
+                                                                {
+                                                                  pi_attr.title_bn
+                                                                }
+                                                              </div>
+                                                            </div>
+                                                          </td>
+                                                        )
+                                                      )}
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            </div>
                                           </div>
-                                        </div>
+
+                                          <div key={kkey}>
+                                            {pis_d.name_bn}
+                                            <div className="mt-5">
+                                              {pis_d.pi_attribute.map(
+                                                (pi_attr: any, kedy: any) => (
+                                                  <ol key={kedy}>
+                                                    {pi_attr.title_bn}|
+                                                    <button
+                                                      onClick={() =>
+                                                        save_PI_evalution(
+                                                          d.uid,
+                                                          pi_attr.uid,
+                                                          pi_attr.weight_uid
+                                                        )
+                                                      }
+                                                      className={`btn btn-sm ${
+                                                        pi_attr.weight.name ==
+                                                        "Square"
+                                                          ? "btn-info"
+                                                          : pi_attr.weight
+                                                              .name == "Circle"
+                                                          ? "btn-primary"
+                                                          : "btn-warning"
+                                                      } `}
+                                                      type="button"
+                                                    >
+                                                      {pi_attr.weight.name}
+                                                    </button>
+                                                  </ol>
+                                                )
+                                              )}
+                                            </div>
+                                          </div>
+                                        </>
                                       ))}
                                     </div>
                                   </div>

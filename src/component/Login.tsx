@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { loginPassword } from '../Request';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import loginPageBG from '../../public/assets/images/login-bg.png';
+import loginPageBG from '../../public/assets/assets/images/login-bg.png';
 
 
 export default function Login() {
@@ -39,7 +39,7 @@ export default function Login() {
           <div >
             <div className="row d-flex justify-content-center align-items-center login-container">
               <div className="col-md-7 cols-sm-12">
-                <img src="/images/brand-logo.png" alt="logo" />
+                <img src="/assets/images/brand-logo.png" alt="logo" />
                 <p className="teacher-login-title">বিষয়ভিত্তিক মূল্যায়ন অ্যাপ্লিকেশন</p>
                 <p className="np-login-subtitle">অনুগ্রহ করে আপনার অ্যাকাউন্টে সাইন ইন করুন এবং অ্যাডভেঞ্চার শুরু করুন</p>
               </div>
@@ -70,7 +70,7 @@ export default function Login() {
                       <label htmlFor="caid" className="login-field-title"> ইউজার আইডি </label>
                       <div className="input-group">
                         <div className="input-group-prepend">
-                          <span>  <img src="/images/user-square.svg" className="np-login-field-icon" alt="logo" /></span>
+                          <span>  <img src="/assets/images/user-square.svg" className="np-login-field-icon" alt="logo" /></span>
                         </div>
 
                         <input type="number" id="caid" required autoComplete="off" placeholder="৯১৩১৫০৩০৩০৪০১" name="caid" className="form-control np-login-form-field" />
@@ -80,7 +80,7 @@ export default function Login() {
 
                     <div className="form-group">
                       <label htmlFor="pin" className="login-field-title"> পিন নম্বর </label>
-                      <div className="input-group"><img src="/images/lock.svg" className="np-login-field-icon" alt="logo" />
+                      <div className="input-group"><img src="/assets/images/lock.svg" className="np-login-field-icon" alt="logo" />
                         <input type="password" id="pin" className="form-control np-login-form-field" name="password" required placeholder="Password" />
                         <div className="input-group-append password-toggle">
                           <span>
