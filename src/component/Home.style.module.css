@@ -123,6 +123,20 @@
 /* shikhon kalin mollaion end */
 
 /* learning_period_assessment_btn_right start*/
+.table_1st_column_sticky {
+  position: sticky;
+  white-space: nowrap;
+  left: 0px;
+  background-color: #fff;
+  min-width: 120px;
+}
+.table_2nd_column_sticky {
+  position: sticky;
+  white-space: nowrap;
+  left: 120px;
+  background-color: #fff;
+  min-width: 100px;
+}
 
 .page_link_hover:hover {
   background-color: #428f92;

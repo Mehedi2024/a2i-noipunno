@@ -3,9 +3,7 @@ import axios from "axios";
 const API_URL = import.meta.env.VITE_REACT_APP_API_URL;
 
 const authToken = localStorage.getItem("customer_login_auth") || "";
-
-console.log(`authToken`,  authToken);
-const token: any = authToken ? JSON.parse(authToken) : ""
+const token: any = JSON.parse(authToken);
 axios.defaults.headers.common[
     "Authorization"
 ] = `Bearer ${token?.access_token}`;

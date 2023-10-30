@@ -33,23 +33,17 @@ import { all_teachers, teacher_own_subject } from "../Request";
 export default function Home() {
   const [teachers, setTeachers] = useState<any>([]);
 
-
-
   const fetchData = async () => {
-
     const own_subjet: any = await teacher_own_subject();
-    localStorage.setItem("own_subjet" , JSON.stringify(own_subjet)  )
+    localStorage.setItem("own_subjet", JSON.stringify(own_subjet));
   };
-
-
-
 
   useEffect(() => {
     all_teachers().then((response) => {
       setTeachers(response.data.data);
     });
 
-    fetchData()
+    fetchData();
   }, []);
 
   return (
@@ -71,8 +65,8 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-6 col-sm-4 col-md-3">
-                    <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
+                  <div className="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <div className="card shadow-lg border-0 p-1 my-3 teacher-list-card">
                       <div className="gap-1 gap-lg-3 justify-content-center">
                         <div className="d-flex justify-content-center py-2 pb-4">
                           <div
@@ -89,15 +83,15 @@ export default function Home() {
                           শ্রেণি শিক্ষক : <span> শওকত আলী</span>
                         </h5>
                       </div>
-                      <div className="flex-md-column flex-lg-row d-flex  justify-content-center gap-2">
+                      <div className="flex-md-row flex-lg-row d-flex  justify-content-center gap-2">
                         <h6 className={styles.session}>প্রভাতি সেশন</h6>
                         <h6 className={styles.horizontal_bar}>। </h6>
                         <h6 className={styles.branch}>পদ্মা শাথা</h6>
                       </div>
                     </div>
                   </div>
-                  <div className="col-6 col-sm-4 col-md-3">
-                    <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
+                  <div className="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <div className="card shadow-lg border-0 p-1 my-3 teacher-list-card">
                       <div className="gap-1 gap-lg-3 justify-content-center">
                         <div className="d-flex justify-content-center py-2 pb-4">
                           <div
@@ -114,15 +108,15 @@ export default function Home() {
                           শ্রেণি শিক্ষক : <span> শওকত আলী</span>
                         </h5>
                       </div>
-                      <div className="flex-md-column flex-lg-row d-flex  justify-content-center gap-2">
+                      <div className="flex-md-row flex-lg-row d-flex  justify-content-center gap-2">
                         <h6 className={styles.session}>প্রভাতি সেশন</h6>
                         <h6 className={styles.horizontal_bar}>। </h6>
                         <h6 className={styles.branch}>পদ্মা শাথা</h6>
                       </div>
                     </div>
                   </div>
-                  <div className="col-6 col-sm-4 col-md-3">
-                    <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
+                  <div className="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <div className="card shadow-lg border-0 p-1 my-3 teacher-list-card">
                       <div className="gap-1 gap-lg-3 justify-content-center">
                         <div className="d-flex justify-content-center py-2 pb-4">
                           <div
@@ -139,15 +133,15 @@ export default function Home() {
                           শ্রেণি শিক্ষক : <span> শওকত আলী</span>
                         </h5>
                       </div>
-                      <div className="flex-md-column flex-lg-row d-flex  justify-content-center gap-2">
+                      <div className="flex-md-row flex-lg-row d-flex  justify-content-center gap-2">
                         <h6 className={styles.session}>প্রভাতি সেশন</h6>
                         <h6 className={styles.horizontal_bar}>। </h6>
                         <h6 className={styles.branch}>পদ্মা শাথা</h6>
                       </div>
                     </div>
                   </div>
-                  <div className="col-6 col-sm-4 col-md-3">
-                    <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
+                  <div className="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <div className="card shadow-lg border-0 p-1 my-3 teacher-list-card">
                       <div className="gap-1 gap-lg-3 justify-content-center">
                         <div className="d-flex justify-content-center py-2 pb-4">
                           <div
@@ -164,15 +158,15 @@ export default function Home() {
                           শ্রেণি শিক্ষক : <span> শওকত আলী</span>
                         </h5>
                       </div>
-                      <div className="flex-md-column flex-lg-row d-flex  justify-content-center gap-2">
+                      <div className="flex-md-row flex-lg-row d-flex  justify-content-center gap-2">
                         <h6 className={styles.session}>প্রভাতি সেশন</h6>
                         <h6 className={styles.horizontal_bar}>। </h6>
                         <h6 className={styles.branch}>পদ্মা শাথা</h6>
                       </div>
                     </div>
                   </div>
-                  <div className="col-6 col-sm-4 col-md-3">
-                    <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
+                  <div className="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <div className="card shadow-lg border-0 p-1 my-3 teacher-list-card">
                       <div className="gap-1 gap-lg-3 justify-content-center">
                         <div className="d-flex justify-content-center py-2 pb-4">
                           <div
@@ -189,15 +183,15 @@ export default function Home() {
                           শ্রেণি শিক্ষক : <span> শওকত আলী</span>
                         </h5>
                       </div>
-                      <div className="flex-md-column flex-lg-row d-flex  justify-content-center gap-2">
+                      <div className="flex-md-row flex-lg-row d-flex  justify-content-center gap-2">
                         <h6 className={styles.session}>প্রভাতি সেশন</h6>
                         <h6 className={styles.horizontal_bar}>। </h6>
                         <h6 className={styles.branch}>পদ্মা শাথা</h6>
                       </div>
                     </div>
                   </div>
-                  <div className="col-6 col-sm-4 col-md-3">
-                    <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
+                  <div className="col-6 col-sm-4 col-md-4 col-lg-3">
+                    <div className="card shadow-lg border-0 p-1 my-3 teacher-list-card">
                       <div className="gap-1 gap-lg-3 justify-content-center">
                         <div className="d-flex justify-content-center py-2 pb-4">
                           <div
@@ -214,7 +208,7 @@ export default function Home() {
                           শ্রেণি শিক্ষক : <span> শওকত আলী</span>
                         </h5>
                       </div>
-                      <div className="flex-md-column flex-lg-row d-flex  justify-content-center gap-2">
+                      <div className="flex-md-row flex-lg-row d-flex  justify-content-center gap-2">
                         <h6 className={styles.session}>প্রভাতি সেশন</h6>
                         <h6 className={styles.horizontal_bar}>। </h6>
                         <h6 className={styles.branch}>পদ্মা শাথা</h6>
@@ -436,7 +430,7 @@ export default function Home() {
                   aria-labelledby="provati-tab"
                 >
                   <div className="row">
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -460,7 +454,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -484,7 +478,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -508,7 +502,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -532,7 +526,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -556,7 +550,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -580,7 +574,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -613,7 +607,7 @@ export default function Home() {
                   aria-labelledby="deba_session-tab"
                 >
                   <div className="row">
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -637,7 +631,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -661,7 +655,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -685,7 +679,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -709,7 +703,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -733,7 +727,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -757,7 +751,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -790,7 +784,7 @@ export default function Home() {
                   aria-labelledby="sondha_session-tab"
                 >
                   <div className="row">
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -814,7 +808,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -838,7 +832,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -862,7 +856,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -886,7 +880,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -910,7 +904,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -934,7 +928,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-6 col-sm-4 col-md-2">
+                    <div className="col-6 col-sm-4 col-md-3 col-lg-3 col-xl-2">
                       <div className="card shadow-lg border-0 p-1 p-lg-3 my-3 teacher-list-card">
                         <div className="gap-1 gap-lg-3 justify-content-center">
                           <div className="d-flex justify-content-center py-2 pb-4">
@@ -2126,27 +2120,33 @@ export default function Home() {
                   <table className="table table-sm">
                     <thead>
                       <tr>
-                        <th scope="col" style={{ width: "5%" }}>
+                        <th className={`${styles.table_1st_column_sticky}`}>
                           শিক্ষার্থীর <BiFilterAlt className="fs-5 ms-4" />
                         </th>
-                        <th scope="col" style={{ width: "5%" }}>
+                        <th className={`${styles.table_2nd_column_sticky}`}>
                           শিক্ষার্থীর ID
                         </th>
-                        <th scope="col" style={{ width: "30%" }}></th>
-                        <th scope="col" style={{ width: "30%" }}>
+                        <th style={{ minWidth: "330px" }}></th>
+                        <th style={{ minWidth: "300px" }}>
                           <BiFilterAlt className="fs-5" />
                         </th>
-                        <th scope="col" style={{ width: "30%" }}></th>
+                        <th style={{ minWidth: "380px" }}></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td style={{ width: "5%" }}>
+                        <td
+                          className={`pt-3 ${styles.table_1st_column_sticky}`}
+                        >
                           <GoPerson className="fs-6" /> ইনতিশার পারভেজ
                         </td>
-                        <td style={{ width: "5%" }}>987654321</td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td
+                          className={`pt-3 ${styles.table_2nd_column_sticky}`}
+                        >
+                          987654321
+                        </td>
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2165,8 +2165,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2185,8 +2185,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2208,12 +2208,18 @@ export default function Home() {
                         </td>
                       </tr>
                       <tr>
-                        <td style={{ width: "5%" }}>
+                        <td
+                          className={`pt-3 ${styles.table_1st_column_sticky}`}
+                        >
                           <GoPerson className="fs-6" /> ইনতিশার পারভেজ
                         </td>
-                        <td style={{ width: "5%" }}>987654321</td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td
+                          className={`pt-3 ${styles.table_2nd_column_sticky}`}
+                        >
+                          987654321
+                        </td>
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2232,8 +2238,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2252,8 +2258,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2275,12 +2281,18 @@ export default function Home() {
                         </td>
                       </tr>
                       <tr>
-                        <td style={{ width: "5%" }}>
+                        <td
+                          className={`pt-3 ${styles.table_1st_column_sticky}`}
+                        >
                           <GoPerson className="fs-6" /> ইনতিশার পারভেজ
                         </td>
-                        <td style={{ width: "5%" }}>987654321</td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td
+                          className={`pt-3 ${styles.table_2nd_column_sticky}`}
+                        >
+                          987654321
+                        </td>
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2299,8 +2311,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2319,8 +2331,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2342,12 +2354,18 @@ export default function Home() {
                         </td>
                       </tr>
                       <tr>
-                        <td style={{ width: "5%" }}>
+                        <td
+                          className={`pt-3 ${styles.table_1st_column_sticky}`}
+                        >
                           <GoPerson className="fs-6" /> ইনতিশার পারভেজ
                         </td>
-                        <td style={{ width: "5%" }}>987654321</td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td
+                          className={`pt-3 ${styles.table_2nd_column_sticky}`}
+                        >
+                          987654321
+                        </td>
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2366,8 +2384,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2386,8 +2404,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2409,12 +2427,18 @@ export default function Home() {
                         </td>
                       </tr>
                       <tr>
-                        <td style={{ width: "5%" }}>
+                        <td
+                          className={`pt-3 ${styles.table_1st_column_sticky}`}
+                        >
                           <GoPerson className="fs-6" /> ইনতিশার পারভেজ
                         </td>
-                        <td style={{ width: "5%" }}>987654321</td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td
+                          className={`pt-3 ${styles.table_2nd_column_sticky}`}
+                        >
+                          987654321
+                        </td>
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2433,8 +2457,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2453,8 +2477,8 @@ export default function Home() {
                             </div>
                           </div>
                         </td>
-                        <td style={{ width: "30%" }}>
-                          <div className="d-flex gap-2">
+                        <td>
+                          <div className="d-flex gap-2 align-items-center">
                             {" "}
                             <div
                               className=""
@@ -2580,7 +2604,7 @@ export default function Home() {
                         </li>
                         <li className="page-item">
                           <a
-                            className="page-link text-dark page_link_hover rounded"
+                            className={`page-link text-dark ${styles.page_link_hover} rounded`}
                             href="#"
                           >
                             9
@@ -2588,7 +2612,7 @@ export default function Home() {
                         </li>
                         <li className="page-item">
                           <a
-                            className="page-link text-dark page_link_hover rounded"
+                            className={`page-link text-dark ${styles.page_link_hover} rounded`}
                             href="#"
                           >
                             <MdArrowForwardIos />
