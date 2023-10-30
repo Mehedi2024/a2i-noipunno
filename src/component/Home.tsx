@@ -3,29 +3,25 @@ import TeacherImg from "../assets/images/teacher.png";
 import { useState, useEffect } from "react";
 
 import styles from "./Home.style.module.css";
-import { FiStar, FiTriangle } from "react-icons/fi";
-import { GoPerson } from "react-icons/go";
-import { PiBookOpenText } from "react-icons/pi";
+import { FiStar } from "react-icons/fi";
+
 import { AiOutlineHome } from "react-icons/ai";
 import {
   BiSidebar,
-  BiFilterAlt,
-  BiSquareRounded,
-  BiCircle,
+
+
   BiRadioCircle,
 } from "react-icons/bi";
-import { BsCloudSun, BsMoon } from "react-icons/bs";
-import { SlBookOpen } from "react-icons/sl";
+
 import {
   MdArrowBackIosNew,
   MdOutlineArrowForwardIos,
-  MdOutlineKeyboardArrowRight,
-  MdArrowForwardIos,
+
 } from "react-icons/md";
 import {
-  HiOutlineSun,
+
   HiOutlineDotsVertical,
-  HiOutlineDotsHorizontal,
+
 } from "react-icons/hi";
 import ProfileCard from "./ProfileCard";
 import { all_teachers, teacher_own_subject } from "../Request";
@@ -55,16 +51,16 @@ export default function Home() {
               <div className="col-md-3">
                 <ProfileCard />
               </div>
-              {/* <div className="col-md-9">
-                <div className="row d-flex gap-2">
+              <div className="col-md-9">
+                {/* <div className="row d-flex gap-2">
                   <div></div>
                   <div className="d-flex">
                     <h5>
                       <BiSidebar /> বিষয়সমূহ
                     </h5>
                   </div>
-                </div>
-                <div className="row">
+                </div> */}
+                {/* <div className="row">
                   <div className="col-6 col-sm-4 col-md-4 col-lg-3">
                     <div className="card shadow-lg border-0 p-1 my-3 teacher-list-card">
                       <div className="gap-1 gap-lg-3 justify-content-center">
@@ -215,7 +211,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 {/* <div className="row" style={{ rowGap: 10 }}>
                   <div className="col-md-6">
                     <a
@@ -379,7 +375,7 @@ export default function Home() {
                     </a>
                   </div>
                 </div> */}
-              </div> */}
+              </div>
             </div> 
             {/* Teachers List start */}
 
