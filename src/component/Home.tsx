@@ -51,11 +51,11 @@ export default function Home() {
       <div className="dashboard-section">
         <section className="np-breadcumb-section pt-5">
           <div className="container">
-            <div className="row">
+             <div className="row">
               <div className="col-md-3">
                 <ProfileCard />
               </div>
-              <div className="col-md-9">
+              {/* <div className="col-md-9">
                 <div className="row d-flex gap-2">
                   <div></div>
                   <div className="d-flex">
@@ -379,13 +379,13 @@ export default function Home() {
                     </a>
                   </div>
                 </div> */}
-              </div>
-            </div>
+              </div> */}
+            </div> 
             {/* Teachers List start */}
 
             {/* Teachers List end */}
             {/* Class Six subject start */}
-            <div className="row">
+            {/* <div className="row">
               <h5>ষষ্ঠ শ্রেণি বিষয়</h5>
               <ul className="nav d-flex justify-content-around bg-white py-1 rounded">
                 <li className="nav-item">
@@ -955,7 +955,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* Class Six subject end */}
             {/* teacher info start */}
             <div className="py-2">
@@ -1382,7 +1382,7 @@ export default function Home() {
             </div>
             {/* teacher info end */}
             {/* report start */}
-            <div className="row py-5">
+            {/* <div className="row py-5">
               <div className="d-flex align-items-center py-2 gap-2">
                 <div className="card shadow-lg border-0 p-2">
                   <MdArrowBackIosNew className="fs-1" />
@@ -1785,10 +1785,10 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* report end */}
             {/* expertness assessment start */}
-            <div className="row py-5">
+            {/* <div className="row py-5">
               <div className="d-flex align-items-center py-2 gap-2">
                 <div className="card shadow-lg border-0 p-2">
                   <MdArrowBackIosNew className="fs-1" />
@@ -2103,10 +2103,10 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* expertness assessment start */}
             {/* learing period assessment report start */}
-            <div className="py-3">
+            {/* <div className="py-3">
               <div>
                 <h4>শিখনকালীন মূল্যায়ন প্রতিবেদন (PI) </h4>
                 <h5 className="fw-bold">পারদর্শিতা সূচক ৬.১.১ </h5>
@@ -2649,10 +2649,10 @@ export default function Home() {
                   />{" "}
                 </button>
               </div>
-            </div>
+            </div> */}
             {/* learing period assessment report end */}
             {/* shikhon kalin mollaion start */}
-            <div className="py-5">
+            {/* <div className="py-5">
               <h3
                 className="text-center py-2 text-white"
                 style={{ backgroundColor: "#428F92" }}
@@ -2764,10 +2764,10 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* shikhon kalin mollaion end */}
             {/* shikhon kalin mollaion odhai start */}
-            <div className="py-5">
+            {/* <div className="py-5">
               <h3
                 className="text-center py-2 text-white"
                 style={{ backgroundColor: "#428F92" }}
@@ -2842,7 +2842,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* shikhon kalin mollaion odhai start */}
           </div>
         </section>
