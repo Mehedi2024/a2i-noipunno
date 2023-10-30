@@ -34,6 +34,8 @@ export default function Home() {
     localStorage.setItem("own_subjet", JSON.stringify(own_subjet));
   };
 
+
+  
   useEffect(() => {
     all_teachers().then((response) => {
       setTeachers(response.data.data);
