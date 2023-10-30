@@ -215,16 +215,17 @@ export default function Topbar() {
                       <h2
                         className="accordion-header pages-buttons"
                         id="shikkhok-headingOne"
-                      >
+                      ><a href="/teachers-list" className="text-decoration-none">
                         <button
                           className="accordion-button collapsed d-flex justify-content-between align-items-center  w-100 responsive-single-menu-button"
                           type="button"
                         >
-                          <Link to="/teachers-list" className="text-decoration-none">
+                          
                             <img src="/assets/images/teacher.svg" alt="" />
                             <span className="fs-6 px-2">শিক্ষক</span>
-                          </Link>
+                          
                         </button>
+                        </a>
                       </h2>
                     </div>
                   </div>
@@ -388,18 +389,35 @@ export default function Topbar() {
                   </div>
                 </div>
                 <div className="dropdown">
-                  <button
-                    className="d-flex justify-content-between align-items-center btn btn-ligh"
-                    type="button"
-                    id="prothomPata"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+
+                
+                <div
+                    className="accordion accordion-flush responsive-single-menu-button"
+                    id="shikkhok"
                   >
-                    <Link to="/teacher" className="text-decoration-none">
-                      <img src="/assets/images/teacher.svg" alt="" />
-                      <span className="fs-6 px-2">শিক্ষক</span>
-                    </Link>
-                  </button>
+                    <div className="accordion-item">
+                      <h2
+                        className="accordion-header pages-buttons"
+                        id="shikkhok-headingOne"
+                      >
+
+                  
+                        <button
+                          className="accordion-button collapsed d-flex justify-content-between align-items-center  w-100 responsive-single-menu-button"
+                          type="button"
+                        >
+                          <Link to="/teachers-list" className="text-decoration-none">
+                          
+                            <img src="/assets/images/teacher.svg" alt="" />
+                            <span className="fs-6 px-2">শিক্ষক</span>
+                            </Link>
+                        </button>
+</h2>
+</div>
+</div>
+                
+
+
                 </div>
                 <div className="dropdown">
                   <button

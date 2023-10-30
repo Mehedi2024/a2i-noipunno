@@ -29,7 +29,11 @@ export default function TeachersList() {
   }, []);
   return (
     <div>
-    <h1>List of Teachers</h1>
+      <div className="content">
+      <div className="dashboard-section">
+        <section className="np-breadcumb-section pt-5">
+          <div className="container">
+    <h1>শিক্ষকের তালিকা</h1>
     <div className="row">
                   {teachers.map((teacher, index) => (
                     <div className="col-sm-6 col-md-4 my-2">
@@ -181,6 +185,10 @@ export default function TeachersList() {
                       </div>
                     </div>
                   ))}
+                </div>
+                </div>
+                </section>
+                </div>
                 </div>
   </div>
   )

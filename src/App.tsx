@@ -36,7 +36,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/student-mullayon/:assessment_uid" element={<StudentMullayon />} />
           <Route path="/teacher" element={<Teacher />} />
-          <Route path="/teachers-list" element={<TeachersList />} />
+          <Route path="/teachers-list/" element={<TeachersList />} />
           <Route path="/class/:id" element={<ClassWiseSubject />} />
           <Route path="/student-list" element={<StudentList />} />
         </Route>
