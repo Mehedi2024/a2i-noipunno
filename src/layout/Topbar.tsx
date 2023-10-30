@@ -220,23 +220,12 @@ export default function Topbar() {
                           className="accordion-button collapsed d-flex justify-content-between align-items-center  w-100 responsive-single-menu-button"
                           type="button"
                         >
-                          <Link to="/teacher" className="text-decoration-none">
+                          <Link to="/teachers-list" className="text-decoration-none">
                             <img src="/assets/images/teacher.svg" alt="" />
                             <span className="fs-6 px-2">শিক্ষক</span>
                           </Link>
                         </button>
                       </h2>
-                      {/* {
-                        teachersdata.map((d: any, k) =>
-
-                          <a href="#" className="d-block " key={k}>
-                            <button className="w-100 btn btn-light px-5 text-start">
-                              {d.name_bn}
-                            </button>
-                          </a>
-
-                        )
-                      } */}
                     </div>
                   </div>
                   <div className="accordion accordion-flush" id="shikkharthi">
